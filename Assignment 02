@@ -1,1 +1,22 @@
 Is java an interpretor or compiler ? give 3 refrences 
+
+Many of the other languages are considered as any one between (compiler and an interpreter). But JAVA is little bit
+different from all others as it do compilation and interpretation both. It is because to make JAVA independent to the
+operating system. The other languages such as C, it converts the code directly to the machine understandable language
+(binary) and that makes them OS dependent.
+
+JAVA compiles and interprets both, HOW?
+
+In JAVA there is a Bytecode system. Now what is it? The compiler or the JAVA firstly converts the program code into the
+Bytecode to get it executed further by (JVM) JAVA Virtual Machine.
+In the above mentioned process the JAVA interpreter plays a vital role and converts the code into operating system
+understandable binary code to get it generate further output.
+Basic demonstration below,
+.java file (writing code) --> compile --> .class file (compiling/bytecode) ---> interpret --> Machine code (Running
+code/Output)
+The JAVA interpreter that we load, should be compatible to the OS.
+
+References:
+1) https://www.codespeedy.com/why-java-is-called-compiler-interpreter-language/
+2) https://www.javatpoint.com/java-interpreter
+3) https://stackoverflow.com/questions/1326071/is-java-a-compiled-or-an-interpreted-programminglanguage#:~:text=Java%20does%20both%20compilation%20and,we%20use%20the%20javac%20compiler.
