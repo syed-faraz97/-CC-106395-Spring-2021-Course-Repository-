@@ -6,8 +6,10 @@ StdID | Name
 62628 | MUHAMMAD AHSAN
 
 
- public static bool accepts(Dictionary<int, Dictionary<char, int>> transitions, int initial, int[] arr ,string s)
-        {
+ 
+ 
+     public static bool accepts(Dictionary<int, Dictionary<char, int>> transitions, int initial, int[] arr ,string s)
+     {
             int state = initial;
             bool final;
             Console.WriteLine("current_state\tcharacter\tnext_state");
