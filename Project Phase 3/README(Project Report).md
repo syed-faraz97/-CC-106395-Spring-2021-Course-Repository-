@@ -139,7 +139,7 @@ Operators:
 +=  -=  *=  /=  &=  |=  ^=  %=  <<=  >>=  >>>=
 
 
-###Grammar###
+### Grammar ###
 MiniJava Grammar Program ::= MainClass ( ClassDeclaration )* MainClass ::= "class" Identifier "{" "public" "static" "void" "main" "(" "String" "[" "]" Identifier ")" "{" Statement "}" "}" ClassDeclaration ::= "class" Identifier ( "extends" Identifier )? "{" ( VarDeclaration )* ( MethodDeclaration )* "}" VarDeclaration ::= Type Identifier ";" MethodDeclaration ::= "public" Type Identifier "(" ( Type Identifier ( "," Type Identifier )* )? ")" "{" ( VarDeclaration )* ( Statement )* "return" Expression ";" "}" Type ::= "int" "[" "]" | "boolean" | "int" | Identifier Statement ::= "{" ( Statement )* "}" | "if" "(" Expression ")" Statement "else" Statement | "while" "(" Expression ")" Statement | "System.out.println" "(" Expression ")" ";" | Identifier "=" Expression ";" | Identifier "[" Expression "]" "=" Expression ";" Expression ::= Expression ( "&&" | "<" | "+" | "-" | "" ) Expression | Expression "[" Expression "]" | Expression "." "length" | Expression "." Identifier "(" ( Expression ( "," Expression ) )? ")" | <INTEGER_LITERAL> | "true" | "false" | Identifier | "this" | "new" "int" "[" Expression "]" | "new" Identifier "(" ")" | "!" Expression | "(" Expression ")" Identifier ::=
 
 Sample program class Factorial{ public static void main(String[] a){ System.out.println(new Fac().ComputeFac(10)); } }
@@ -148,7 +148,7 @@ class Fac { public int ComputeFac(int num){ int num_aux ; if (num < 1) num_aux =
 
 
 
-##Problems Faced##
+## Problems Faced ##
 Multiple problems were faced in que, but with the motivation & guidance of Sir Farooq we kept going and soo far finally succeed in developing a lexical analyzer.  
 
 ###Problem 1: How does Lexical Analyzer work?###
