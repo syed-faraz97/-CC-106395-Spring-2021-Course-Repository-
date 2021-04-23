@@ -155,7 +155,7 @@ Multiple problems were faced in que, but with the motivation & guidance of Sir F
  
 As per the lectures and guidance provided via Sir Farooq Zaidi, we found out that it tokenizes the code one by one and creates a token stream.
 
-### Problem 2: YACC###
+### Problem 2: YACC ###
 The input of YACC is the rule or grammar and the output is a java program, which was quite difficult to obtain in a row.
 
 ### Confession ###
