@@ -27,7 +27,7 @@ public class HelloWorld {
 
 ```
 
-###Lexical Specification###
+### Lexical Specification ###
 Unicode Escapes
 A compiler for the Java programming language ("Java compiler") first recognizes Unicode escapes in its input, translating the ASCII characters \u followed by four hexadecimal digits to the UTF-16 code unit (§3.1) for the indicated hexadecimal value, and passing all other characters unchanged. Representing supplementary characters requires two consecutive Unicode escapes. This translation step results in a sequence of Unicode input characters.
 
@@ -44,14 +44,12 @@ HexDigit:
 RawInputCharacter:
 any Unicode character
 
-
 Line Terminators
 A Java compiler next divides the sequence of Unicode input characters into lines by recognizing line terminators.
 LineTerminator:
 the ASCII LF character, also known as "newline"
 the ASCII CR character, also known as "return"
 the ASCII CR character followed by the ASCII LF character
-
 
 Input Elements and Tokens
 The input characters and line terminators that result from escape processing and then input line recognition are reduced to a sequence of input elements.
@@ -71,7 +69,6 @@ Operator
 Sub:
 the ASCII SUB character, also known as "control-Z
 
-
 White Space
 White space is defined as the ASCII space character, horizontal tab character, form feed character, and line terminator characters.
 WhiteSpace:
@@ -79,24 +76,17 @@ the ASCII SP character, also known as "space"
 the ASCII HT character, also known as "horizontal tab"
 the ASCII FF character, also known as "form feed"
 
-
 Comments
 There are two kinds of comments:
-
 /* text */
-
 A traditional comment: all the text from the ASCII characters /* to the ASCII characters */ is ignored (as in C and C++).
-
 // text
-
 An end-of-line comment: all the text from the ASCII characters // to the end of the line is ignored (as in C++).
-
 
 Identifiers
 An identifier is an unlimited-length sequence of Java letters and Java digits, the first of which must be a Java letter.
 A "Java letter" is a character for which the method Character.isJavaIdentifierStart(int) returns true.
 A "Java letter-or-digit" is a character for which the method Character.isJavaIdentifierPart(int) returns true.
-
 
 Keywords
 50 character sequences, formed from ASCII letters, are reserved for use as keywords and cannot be used as identifiers.
@@ -124,47 +114,23 @@ CharacterLiteral
 StringLiteral
 NullLiteral
 
-
-Integer Literals
-An integer literal may be expressed in decimal (base 10), hexadecimal (base 16), octal (base 8), or binary (base 2).
-
-IntegerLiteral:
-DecimalIntegerLiteral
-HexIntegerLiteral
-OctalIntegerLiteral
-BinaryIntegerLiteral
-DecimalIntegerLiteral:
-DecimalNumeral [IntegerTypeSuffix]
-HexIntegerLiteral:
-HexNumeral [IntegerTypeSuffix]
-OctalIntegerLiteral:
-OctalNumeral [IntegerTypeSuffix]
-BinaryIntegerLiteral:
-BinaryNumeral [IntegerTypeSuffix]
-
-
-
 Character Literals
 A character literal is expressed as a character or an escape sequence, enclosed in ASCII single quotes. (The single-quote, or apostrophe, character is \u0027.)
 
-CharacterLiteral:
+CharacterLiterals:
 -SingleCharacter '
 -EscapeSequence '
 SingleCharacter:
 InputCharacter but not ' or \
 
-
 Separators
 Twelve tokens, formed from ASCII characters, are the separators (punctuators).
-
 Separators:
 (one of)
 (   )   {   }   [   ]   ;   ,   .   ...   @   ::
 
-
 Operators
 38 tokens, formed from ASCII characters, are the operators.
-
 Operators:
 (one of)
 =   >   <   !   ~   ?   :   ->
