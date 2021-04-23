@@ -151,7 +151,7 @@ class Fac { public int ComputeFac(int num){ int num_aux ; if (num < 1) num_aux =
 ## Problems Faced ##
 Multiple problems were faced in que, but with the motivation & guidance of Sir Farooq we kept going and soo far finally succeed in developing a lexical analyzer.  
 
-###Problem 1: How does Lexical Analyzer work?###
+### Problem 1: How does Lexical Analyzer work? ###
  
 As per the lectures and guidance provided via Sir Farooq Zaidi, we found out that it tokenizes the code one by one and creates a token stream.
 
