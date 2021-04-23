@@ -4,6 +4,8 @@ StdID | Name
 ------------ | -------------
 **59679** | **FARAZ ASHRAF** 
 62628 | MUHAMMAD AHSAN
+
+
  public static bool accepts(Dictionary<int, Dictionary<char, int>> transitions, int initial, int[] arr ,string s)
         {
             int state = initial;
