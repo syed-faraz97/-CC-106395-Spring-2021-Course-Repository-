@@ -28,30 +28,149 @@ public class HelloWorld {
 ```
 
 ###Lexical Specification###
-Java programs are composed of characters from the Unicode character set.
-Java comments
-Comments are used by humans to clarify the source code. There are three types of comments in C#. Single-line comments, multi-line comments and XML comments. XML comments can be extracted to HTML files.
-Java white space
-White space in C# is used to separate tokens in the source file. It is also used to improve readability of the source code.
-Java variables
-A variable is an identifier which holds a value. In programming we say that we assign a value to a variable. Technically speaking, a variable is a reference to a computer memory where the value is stored. Variable names can have alphanumerical characters and underscores. An identifier may begin with a character or an underscore. It may not begin with a number.
-Java literals
-A literal is a textual representation of a particular value of a type. Literal types include boolean, integer, floating point, string, character, and date. Technically, a literal will be assigned a value at compile time, while a variable will be assigned at runtime.
-Java operators
-An operator is a symbol used to perform an action on some value. Operators are used in expressions to describe operations involving one or more operands.
-+    -    *    /    %    ^    &    |    !    ~
-=    +=   -=   *=   /=   %=    ^=    ++    --
-==   !=    <   >    &=  >>=   <<=   >=   <=
-||   &&    >>    <<    ?:
-Java separators
-A separator is a sequence of one or more characters used to specify the boundary between separate, independent regions in plain text or other data stream.
-[ ]   ( )   { }   ,   :   ;
-Java keywords
-A keyword is a reserved word in the C# language. Keywords are used to perform a specific task in the computer program. For example, define variables, do repetitive tasks, or perform logical operations.
-Java conventions
-Conventions are best practices followed by programmers when writing source code. Each language can have its own set of conventions. Conventions are not strict rules; they are merely recommendations for writing good quality code.
-Java Tokens
-Tokens are generally any unit that is not whitespace or a comment. They are part of the text of a program.
+Unicode Escapes
+A compiler for the Java programming language ("Java compiler") first recognizes Unicode escapes in its input, translating the ASCII characters \u followed by four hexadecimal digits to the UTF-16 code unit (§3.1) for the indicated hexadecimal value, and passing all other characters unchanged. Representing supplementary characters requires two consecutive Unicode escapes. This translation step results in a sequence of Unicode input characters.
+
+UnicodeInputCharacter:
+UnicodeEscape
+RawInputCharacter
+UnicodeEscape:
+\ UnicodeMarker HexDigit HexDigit HexDigit HexDigit
+UnicodeMarker:
+u {u}
+HexDigit:
+(one of)
+0 1 2 3 4 5 6 7 8 9 a b c d e f A B C D E F
+RawInputCharacter:
+any Unicode character
+
+
+Line Terminators
+A Java compiler next divides the sequence of Unicode input characters into lines by recognizing line terminators.
+LineTerminator:
+the ASCII LF character, also known as "newline"
+the ASCII CR character, also known as "return"
+the ASCII CR character followed by the ASCII LF character
+
+
+Input Elements and Tokens
+The input characters and line terminators that result from escape processing and then input line recognition are reduced to a sequence of input elements.
+
+Input:
+{InputElement} [Sub]
+InputElement:
+WhiteSpace
+Comment
+Token
+Token:
+Identifier
+Keyword
+Literal
+Separator
+Operator
+Sub:
+the ASCII SUB character, also known as "control-Z
+
+
+White Space
+White space is defined as the ASCII space character, horizontal tab character, form feed character, and line terminator characters.
+WhiteSpace:
+the ASCII SP character, also known as "space"
+the ASCII HT character, also known as "horizontal tab"
+the ASCII FF character, also known as "form feed"
+
+
+Comments
+There are two kinds of comments:
+
+/* text */
+
+A traditional comment: all the text from the ASCII characters /* to the ASCII characters */ is ignored (as in C and C++).
+
+// text
+
+An end-of-line comment: all the text from the ASCII characters // to the end of the line is ignored (as in C++).
+
+
+Identifiers
+An identifier is an unlimited-length sequence of Java letters and Java digits, the first of which must be a Java letter.
+A "Java letter" is a character for which the method Character.isJavaIdentifierStart(int) returns true.
+A "Java letter-or-digit" is a character for which the method Character.isJavaIdentifierPart(int) returns true.
+
+
+Keywords
+50 character sequences, formed from ASCII letters, are reserved for use as keywords and cannot be used as identifiers.
+Keywords:
+abstract   continue   for          new         switch
+assert     default    if           package     synchronized
+boolean    do         goto         private     this
+break      double     implements   protected   throw
+byte       else       import       public      throws
+case       enum       instanceof   return      transient
+catch      extends    int          short       try
+char       final      interface    static      void
+class      finally    long         strictfp    volatile
+const      float      native       super       while
+
+
+Literals
+A literal is the source code representation of a value of a primitive type (§4.2), the String type, or the null type.
+
+Literal:
+IntegerLiteral
+FloatingPointLiteral
+BooleanLiteral
+CharacterLiteral
+StringLiteral
+NullLiteral
+
+
+Integer Literals
+An integer literal may be expressed in decimal (base 10), hexadecimal (base 16), octal (base 8), or binary (base 2).
+
+IntegerLiteral:
+DecimalIntegerLiteral
+HexIntegerLiteral
+OctalIntegerLiteral
+BinaryIntegerLiteral
+DecimalIntegerLiteral:
+DecimalNumeral [IntegerTypeSuffix]
+HexIntegerLiteral:
+HexNumeral [IntegerTypeSuffix]
+OctalIntegerLiteral:
+OctalNumeral [IntegerTypeSuffix]
+BinaryIntegerLiteral:
+BinaryNumeral [IntegerTypeSuffix]
+
+
+
+Character Literals
+A character literal is expressed as a character or an escape sequence, enclosed in ASCII single quotes. (The single-quote, or apostrophe, character is \u0027.)
+
+CharacterLiteral:
+-SingleCharacter '
+-EscapeSequence '
+SingleCharacter:
+InputCharacter but not ' or \
+
+
+Separators
+Twelve tokens, formed from ASCII characters, are the separators (punctuators).
+
+Separators:
+(one of)
+(   )   {   }   [   ]   ;   ,   .   ...   @   ::
+
+
+Operators
+38 tokens, formed from ASCII characters, are the operators.
+
+Operators:
+(one of)
+=   >   <   !   ~   ?   :   ->
+==  >=  <=  !=  &&  ||  ++  --
++   -   *   /   &   |   ^   %   <<   >>   >>>
++=  -=  *=  /=  &=  |=  ^=  %=  <<=  >>=  >>>=
 
 
 ###Grammar###
